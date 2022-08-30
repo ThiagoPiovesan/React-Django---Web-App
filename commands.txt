@@ -1,0 +1,5 @@
+django-admin startproject music_controller -> Initialize
+django-admin startapp api -> Api folder, models, etc
+python .\manage.py makemigrations -> evey time the database changes
+python .\manage.py migrate
+python .\manage.py runserver -> runs the server
