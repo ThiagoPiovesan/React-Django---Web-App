@@ -6,14 +6,10 @@
 #-----------------------------------#
 
 # Libs Importantion:
-from django.shortcuts import render
-from rest_framework import generics
-from .serializers import RoomSerializer
+from rest_framework import serializers
 from .models import Room
 
-# Create your views here.
-class RoomView(generics.CreateAPIView):
-    queryset = Room.objects.all()
-    serializer_class = RoomSerializer
-    
-    
+class RoomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Room
+        fields = ('id', 'code', 'host', 'guest_can_pause', 'votes_to_skip', 'created_at')
